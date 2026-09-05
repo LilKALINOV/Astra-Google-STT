@@ -1,0 +1,19 @@
+[plugin]
+id = "google-stt"
+name = "Google STT"
+version = "0.2.0"
+description = "Бесплатный плагин распознавания речи для Astra. Работает через Google Web Speech API — не требует API-ключа. Поддерживает 37 языков. Установил и говоришь."
+author = "Lil KALINOV"
+license = "MIT"
+
+[entry]
+command = "target/release/google-stt"
+
+[capabilities]
+stt = true
+
+[permissions]
+
+[platform]
+os = ["linux", "windows"]
+arch = ["x86_64"]

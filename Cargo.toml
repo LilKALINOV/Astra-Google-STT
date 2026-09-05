@@ -1,0 +1,18 @@
+[package]
+name = "google-stt"
+version = "0.2.0"
+edition = "2021"
+license = "MIT"
+authors = ["Lil KALINOV"]
+
+[[bin]]
+name = "google-stt"
+path = "src/main.rs"
+
+[dependencies]
+astra-plugin-sdk = "0.6"
+reqwest = { version = "0.12", features = ["json"] }
+base64 = "0.22"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+anyhow = "1"
