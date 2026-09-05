@@ -2,7 +2,7 @@
 
 Speech recognition via Web Speech API — **free, no API key required**.
 
-![icon](icon.svg)
+![icon](icon.png)
 
 ## How it works
 
