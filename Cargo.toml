@@ -1,12 +1,12 @@
 [package]
-name = "google-stt"
-version = "0.2.0"
+name = "web-stt"
+version = "0.3.0"
 edition = "2021"
 license = "MIT"
 authors = ["Lil KALINOV"]
 
 [[bin]]
-name = "google-stt"
+name = "web-stt"
 path = "src/main.rs"
 
 [dependencies]

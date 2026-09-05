@@ -1,12 +1,12 @@
-# Google STT — Free Speech-to-Text Plugin for Astra
+# Web Speech-to-Text — Free STT Plugin for Astra
 
-Speech recognition via Google Web Speech API — **free, no API key required**.
+Speech recognition via Web Speech API — **free, no API key required**.
 
-![icon](icon.png)
+![icon](icon.svg)
 
 ## How it works
 
-This plugin uses the same free Google endpoint that Chrome and the Python `SpeechRecognition` library use. No registration, no API key, no setup.
+This plugin uses the same free Web Speech API endpoint that Chrome and the Python `SpeechRecognition` library use. No registration, no API key, no setup.
 
 **Limitations:**
 - Audio up to ~60 seconds per request
