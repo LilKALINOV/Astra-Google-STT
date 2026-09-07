@@ -1,6 +1,6 @@
 [package]
 name = "web-stt"
-version = "0.5.0"
+version = "0.6.0"
 edition = "2021"
 license = "MIT"
 authors = ["Lil KALINOV"]
@@ -11,8 +11,8 @@ path = "src/main.rs"
 
 [dependencies]
 astra-plugin-sdk = "0.6"
-reqwest = { version = "0.12", features = ["json"] }
-base64 = "0.22"
+reqwest = "0.12"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 anyhow = "1"
+tokio = { version = "1", features = ["time", "sync", "macros", "rt"] }

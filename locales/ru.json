@@ -1,3 +1,13 @@
 {
-  "listing.description": "Бесплатный плагин распознавания речи для Astra. Работает через Google Web Speech API — не требует API-ключа. Поддерживает 38 языков. Установил и говоришь."
+  "listing.description": "Бесплатный плагин распознавания речи для Astra. Работает через Google Web Speech API — не требует API-ключа. Поддерживает 38 языков. Установил и говоришь.",
+  "config.language.label": "Язык",
+  "config.api_key.label": "Google API-ключ (необязательно)",
+  "config.api_key.placeholder": "AIza... (пусто = бесплатный встроенный ключ)",
+  "config.api_key.description": "Ваш личный ключ Google API для www.google.com/speech-api. Оставьте пустым, чтобы использовать бесплатный встроенный chromium-ключ.",
+  "config.max_audio_secs.label": "Макс. длина фразы (секунды)",
+  "config.max_audio_secs.description": "Обрезать аудио длиннее указанного перед отправкой. Google отклоняет запросы длиннее ~60 секунд. 0 = без ограничения.",
+  "config.timeout_secs.label": "Таймаут сети (секунды)",
+  "config.timeout_secs.description": "Сколько ждать ответ Google, прежде чем запрос завершится ошибкой. 0 = по умолчанию 10 с.",
+  "config.silence_timeout_ms.label": "Тишина для завершения фразы (мс)",
+  "config.silence_timeout_ms.description": "Завершить фразу и отправить её после такой паузы, не дожидаясь собственного распознавания тишины в Astra. 0 = как настроено в Astra."
 }

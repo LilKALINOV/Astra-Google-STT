@@ -1,7 +1,7 @@
 [plugin]
 id = "web-stt"
 name = "Web Speech-to-Text"
-version = "0.5.0"
+version = "0.6.0"
 description = "Free speech-to-text plugin for Astra. Uses Google Web Speech API with no API key required. Supports 38 languages. Install and speak."
 author = "Lil KALINOV"
 license = "MIT"
@@ -13,6 +13,7 @@ command = "target/release/web-stt"
 stt = true
 
 [permissions]
+client = { reason = "Sends recognized speech into Astra chat as a message (dictation)." }
 
 [platform]
 os = ["linux", "windows"]
