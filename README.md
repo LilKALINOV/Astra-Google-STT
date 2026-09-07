@@ -2,7 +2,7 @@
 
 Speech recognition via Google Web Speech API — **free, no API key required, no registration, no setup**. Install the plugin and talk.
 
-![icon](icon.svg)
+[icon](icon.svg)
 
 ## What it does
 
