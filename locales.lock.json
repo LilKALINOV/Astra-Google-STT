@@ -1,0 +1,34 @@
+{
+  "locales": {
+    "ru": {
+      "config.api_key.description": "f78fc90fbed2",
+      "config.api_key.label": "4b1905ef408b",
+      "config.api_key.placeholder": "d9b518b244a0",
+      "config.language.label": "a4fe65264ef7",
+      "config.max_audio_secs.description": "0d17900cf89e",
+      "config.max_audio_secs.label": "47d579dd406d",
+      "config.silence_timeout_ms.description": "1089b3c94f7e",
+      "config.silence_timeout_ms.label": "ac73b0f04299",
+      "config.timeout_secs.description": "2611375a001b",
+      "config.timeout_secs.label": "66856c116f34",
+      "listing.description": "70f5c60c0377",
+      "listing.name": "c1eae1a0d77c"
+    },
+    "uk": {
+      "config.api_key.description": "f78fc90fbed2",
+      "config.api_key.label": "4b1905ef408b",
+      "config.api_key.placeholder": "d9b518b244a0",
+      "config.language.label": "a4fe65264ef7",
+      "config.max_audio_secs.description": "0d17900cf89e",
+      "config.max_audio_secs.label": "47d579dd406d",
+      "config.silence_timeout_ms.description": "1089b3c94f7e",
+      "config.silence_timeout_ms.label": "ac73b0f04299",
+      "config.timeout_secs.description": "2611375a001b",
+      "config.timeout_secs.label": "66856c116f34",
+      "listing.description": "70f5c60c0377",
+      "listing.name": "c1eae1a0d77c"
+    }
+  },
+  "schema": "astra.plugin.locales/1",
+  "source": "en"
+}
