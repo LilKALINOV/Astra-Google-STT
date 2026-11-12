@@ -15,6 +15,9 @@ stt = true
 [permissions]
 client = { reason = "Sends recognized speech into Astra chat as a message (dictation)." }
 
+[config]
+schema = "{\"$schema\":\"http://json-schema.org/draft-07/schema#\",\"type\":\"object\",\"properties\":{\"api_key\":{\"type\":\"string\",\"title\":\"$config.api_key.label\",\"description\":\"$config.api_key.description\"},\"request_timeout_secs\":{\"type\":\"integer\",\"title\":\"$config.timeout_secs.label\",\"description\":\"$config.timeout_secs.description\",\"minimum\":1,\"maximum\":60,\"default\":10}}}"
+
 [platform]
 os = ["linux", "windows"]
 arch = ["x86_64"]

@@ -3,11 +3,7 @@
   "config.api_key.label": "Google API key (optional)",
   "config.api_key.placeholder": "AIza... (empty = free built-in key)",
   "config.language.label": "Language",
-  "config.max_audio_secs.description": "Truncate audio longer than this before sending. Google rejects requests over ~60 seconds. 0 = no limit.",
-  "config.max_audio_secs.label": "Max phrase length (seconds)",
-  "config.silence_timeout_ms.description": "End the phrase and send it after this much quiet, instead of waiting for Astra's own silence detection. 0 = use Astra's setting.",
-  "config.silence_timeout_ms.label": "Silence to end phrase (ms)",
-  "config.timeout_secs.description": "How long to wait for Google to answer before the request fails. 0 = default 10 s.",
+  "config.timeout_secs.description": "How long to wait for Google to answer before the request fails. Default is 10 s.",
   "config.timeout_secs.label": "Network timeout (seconds)",
   "listing.description": "Free speech-to-text plugin for Astra. Uses Google Web Speech API with no API key required. Supports 38 languages. Install and speak.",
   "listing.name": "Web Speech-to-Text"

@@ -6,6 +6,13 @@
 - **Протокол и сборка плагина**: CLI `astra-plugin` (версия 0.5.1), спецификация Bundle v2 (`.astraplugin`).
 - **Бинарник**: `target/release/web-stt.exe` (Windows) / `target/release/web-stt` (Linux).
 - **Интеграция**: Google Web Speech API v2 (Chromium public key / personal key).
+- **Настройки**:
+  - `[config]` в `plugin.toml`: JSON Schema для страницы настроек плагина в Astra (Settings -> Plugins -> Web Speech-to-Text). Содержит опциональный `api_key` и `request_timeout_secs`.
+  - `stt_config_fields` в Rust коде: динамические настройки для страницы Voice (Settings -> Voice) — содержит выбор языка `language_code`.
+- **Чанкирование аудио**:
+  - Google Web Speech API принимает аудио до ~60 секунд.
+  - Плагин автоматически нарезает длинные фразы (более 50 секунд) на сегменты по 50 секунд, отправляет их по очереди, объединяет результат и отправляет промежуточные / финальные события `SttEvent`.
+  - Убраны ограничения `max_audio_secs` и `silence_timeout_ms`, плагин полагается на VAD Astra для определения окончания речи.
 - **Каталог локалей**: `locales/` (`en.json`, `ru.json`, `uk.json`), контролируется через `locales.lock.json`.
 
 ## 2. Команды сборки и проверки
@@ -41,3 +48,4 @@
 2. **Лимит иконки (max_icon_bytes)**: иконка `icon.png` размером > 8192 байт отбрасывается каталогом Astra. Решение: сжимать/ресайзить `icon.png` до <= 8192 байт или использовать `icon.svg`.
 3. **Отсутствие listing.name в en.json**: `astra-plugin check` требует наличия `listing.name` во всех файлах локалей, если присутствует `locales/`. Решение: `astra-plugin locale sync` и `astra-plugin locale add <lang>`.
 4. **Команды в PowerShell/Windows**: избегать сложных пайпов с неэкранированными переменными `$`; использовать `.ps1` скрипты или Python-скрипты.
+5. **Превышение 60 секунд в Google Speech API**: запросы длиннее ~60 секунд отклоняются Google. Решение: автоматически чанковать аудио на сегменты по 50 секунд и конкатенировать распознанные транскрипты.

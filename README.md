@@ -29,9 +29,9 @@
 
 - **Free and keyless** – Uses the public Google Web Speech endpoint with a built‑in shared key; no API key needed.
 - **Wide language support** – 38 locales, including Russian, English (US/UK), Ukrainian, German, French, Spanish, Italian, Portuguese (BR), Japanese, Korean, Chinese (Simplified/Traditional), Arabic, Hindi, Turkish, Polish, Dutch, Swedish, Norwegian, Finnish, Danish, Greek, Hebrew, Romanian, Hungarian, Czech, Bulgarian, Croatian, Slovenian, Serbian, Slovak, Lithuanian, Latvian, Estonian, Indonesian, Thai, Vietnamese.
-- **Configurable** – Adjust language, max phrase length, network timeout, and silence detection to end phrases early.
-- **Bring your own key** – Optionally supply your own Google API key if the shared one is throttled.
-- **Live streaming** – Processes audio chunk by chunk, with built‑in silence detection that can override Astra's own VAD.
+- **Configurable** – Adjust language in Voice settings, or set an optional personal API key and network timeout in Plugin Settings.
+- **Bring your own key** – Optionally supply your own Google API key in the plugin settings if the shared one is throttled.
+- **Smart chunking** – Automatically splits long speech into segments of up to 1 minute, transcribing them seamlessly without truncation.
 - **Tool‑only design** – Integrates seamlessly as an STT engine; no extra UI panels.
 - **Localised** – Plugin settings and store descriptions available in English, Russian, and Ukrainian (matching Astra's UI language).
 
@@ -50,8 +50,8 @@ If you use voice dictation or want hands‑free interaction with your AI, this p
 
 ## ❗Limitations
 
-- One request at a time; a phrase is limited to ~60 s (configurable, see Max phrase length).
-- Requires an internet connection — every request goes to Google's servers, and the transcript leaves your machine.
+- Free Google Web Speech API endpoint supports requests up to ~60 seconds per chunk. For longer phrases, the plugin automatically splits audio into segments of up to 50 seconds and concatenates the results.
+- Requires an internet connection — requests go to Google's servers, and the transcript leaves your machine.
 - The endpoint is the free, unofficial one. It is not a guaranteed SLA service; treat it as best-effort.
 - Google may throttle, require a personal key, or change the free endpoint at any time. That is the price of a free, keyless engine.
 
@@ -61,13 +61,11 @@ If you use voice dictation or want hands‑free interaction with your AI, this p
 
 Here’s a step‑by‑step breakdown of the recognition flow:
 
-1. **Astra captures audio** – The assistant listens via microphone, runs its own VAD (voice‑activity detection) to detect speech and phrase boundaries.
-2. **Audio streamed to plugin** – Once a phrase is detected, the raw PCM audio (f32 format) is streamed chunk by chunk to the plugin.
-3. **Plugin detects silence** – The plugin monitors the stream live; if you have set a custom **Silence to end phrase** value, it will end the phrase as soon as that much silence is detected (overriding Astra's VAD if needed).
-4. **Audio conversion & request** – When the phrase ends (either by Astra's signal or the plugin's own silence detection), the audio is converted from 32‑bit float to 16‑bit little‑endian PCM and posted to Google's speech endpoint (`www.google.com/speech-api`).
-5. **JSON parsing** – The plugin parses the JSON response, extracts the transcript, and returns it as a final `SttEvent` to Astra.
-
-> **Note:** If the default silence detection feels too long or too short, adjust the **Silence to end phrase** setting (in milliseconds) – the plugin will then end the phrase on its own after that much quiet.
+1. **Astra captures audio** – The assistant listens via microphone and runs its own VAD (voice‑activity detection) to detect speech and phrase boundaries.
+2. **Audio streamed to plugin** – Raw PCM audio (f32 format) is streamed chunk by chunk to the plugin.
+3. **Automatic chunking** – If continuous speech exceeds 50 seconds, the plugin automatically dispatches completed segments to Google and streams back interim results, ensuring no audio is lost or rejected.
+4. **Audio conversion & request** – Audio chunks are converted from 32‑bit float to 16‑bit little‑endian PCM and sent to Google's speech endpoint (`www.google.com/speech-api`).
+5. **JSON parsing & combination** – The plugin parses the JSON responses, combines recognized text from all segments, and returns the final `SttEvent` to Astra.
 
 ---
 

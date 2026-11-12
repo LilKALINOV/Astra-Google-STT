@@ -3,11 +3,7 @@
   "config.api_key.label": "Google API-ключ (необов'язково)",
   "config.api_key.placeholder": "AIza... (порожньо = безкоштовний вбудований ключ)",
   "config.language.label": "Мова",
-  "config.max_audio_secs.description": "Обрізати аудіо довше за вказане перед відправленням. Google відхиляє запити довші за ~60 секунд. 0 = без обмежень.",
-  "config.max_audio_secs.label": "Макс. довжина фрази (секунди)",
-  "config.silence_timeout_ms.description": "Завершити фразу та відправити її після такої паузи, не чекаючи власного розпізнавання тиші в Astra. 0 = як налаштовано в Astra.",
-  "config.silence_timeout_ms.label": "Тиша для завершення фрази (мс)",
-  "config.timeout_secs.description": "Скільки чекати відповідь Google, перш ніж запит завершиться помилкою. 0 = за замовчуванням 10 с.",
+  "config.timeout_secs.description": "Скільки чекати відповідь Google, перш ніж запит завершиться помилкою. За замовчуванням 10 с.",
   "config.timeout_secs.label": "Мережевий таймаут (секунди)",
   "listing.description": "Безкоштовний плагін розпізнавання мовлення для Astra. Працює через Google Web Speech API — не потребує API-ключа. Підтримує 38 мов. Встановив і говориш.",
   "listing.name": "Web Speech-to-Text"
