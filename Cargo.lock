@@ -2109,7 +2109,7 @@ dependencies = [
 
 [[package]]
 name = "web-stt"
-version = "0.6.0"
+version = "0.6.1"
 dependencies = [
  "anyhow",
  "astra-plugin-sdk",

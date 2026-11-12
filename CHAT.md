@@ -29,3 +29,14 @@
   5. Пересобран релизный бинарник `target/release/web-stt.exe` и бандл `web-stt-0.6.0-windows-x64.astraplugin`.
   6. Проведены проверки: `cargo check`, `cargo test`, `astra-plugin check`, `astra-plugin verify`.
 - **Статус**: Выполнено.
+
+---
+
+- **Задача 3**: Повышение версии до 0.6.1 (`измени версию на 0.6.1`).
+- **Выполненные действия**:
+  1. Обновлена версия с `0.6.0` на `0.6.1` в `Cargo.toml`, `Cargo.lock`, `plugin.toml` и `README.md`.
+  2. Скомпилирован релизный бинарник `target/release/web-stt.exe` (v0.6.1).
+  3. Пройдена проверка `astra-plugin check` (OK: plugin 'web-stt' v0.6.1 is valid).
+  4. Собран и верифицирован бандл `web-stt-0.6.1-windows-x64.astraplugin`.
+  5. Закоммичены и отправлены изменения на GitHub (`master`), подготовлен и отправлен тег релиза `v0.6.1`.
+- **Статус**: Выполнено.

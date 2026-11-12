@@ -1,6 +1,6 @@
 # Web Speech-to-Text – Astra Plugin
 
-[![Version](https://img.shields.io/badge/version-0.6.0-blue.svg)](https://github.com/LilKALINOV/astra-google-stt/releases)
+[![Version](https://img.shields.io/badge/version-0.6.1-blue.svg)](https://github.com/LilKALINOV/astra-google-stt/releases)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Build Status](https://github.com/LilKALINOV/astra-google-stt/actions/workflows/release.yml/badge.svg)](https://github.com/LilKALINOV/astra-google-stt/actions/workflows/release.yml)
 [![Astra Plugin](https://img.shields.io/badge/Astra-Plugin-purple)](https://github.com/mihailinl/AstraPlugins)
